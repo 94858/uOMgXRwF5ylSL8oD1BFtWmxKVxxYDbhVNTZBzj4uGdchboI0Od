@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Add an employee</title>
+    </h:head>
+    <h:body>
+        <h3>Add an employee</h3>
+        <h:form>
+            <h:outputLabel for="username" value="Username" />
+            <h:inputText id="username" value="#{employeeController.username}" required="true"/>
+            <br/>
+            <h:outputLabel for="password" value="Password" />
+            <h:inputSecret id="password" value="#{employeeController.password}" required="true"/>
+            <br/>
+            <h:outputLabel for="firstname" value="Firstname" />
+            <h:inputText id="firstname" value="#{employeeController.firstname}" required="true"/>
+            <br/>
+            <h:outputLabel for="lastname" value="Lastname" />
+            <h:inputText id="lastname" value="#{employeeController.lastname}" required="true"/>
+            <br/>
+            <h:outputLabel for="email" value="Email : " />
+            <h:inputText id="email" value="#{employeeController.email}" required="true"/>
+            <br/>
+            <h:outputLabel for="birth" value="Birth date : " />
+            <h:inputText id="birth" value="#{employeeController.birth}" required="true">
+                <f:convertDateTime pattern="d/M/YYYY"/>
+            </h:inputText>(dd/mm/yyyy)
+            <br/>
+            <h:commandButton value="Log in" action="#{employeeController.addEmployee}" required="true"/>
+        </h:form>
+    </h:body>
+</html>
